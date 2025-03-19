@@ -7,7 +7,7 @@ phases:
   build:
     commands:
       - echo "Compiling Java HTTP Server..."
-	- javac SimpleHttpServer.java  # Compile Java file
+      - javac SimpleHttpServer.java  # Compile Java file
   post_build:
     commands:
       - echo "Starting Java HTTP Server..."

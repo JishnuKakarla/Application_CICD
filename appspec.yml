@@ -1,9 +1,9 @@
- 
 version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html
+    destination: /home/ec2-user/app  # Store files in /home/ec2-user/app
+ 
 hooks:
   BeforeInstall:
 - location: scripts/before_install.sh
@@ -16,4 +16,4 @@ hooks:
   ApplicationStart:
 - location: scripts/start_server.sh
       timeout: 300
-      runas: root
+      runas: ec2-user  # Run Java server as ec2-user

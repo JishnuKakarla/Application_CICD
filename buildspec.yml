@@ -3,10 +3,16 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: latest
+      java: corretto17  # Ensure Java 17 is installed
   build:
     commands:
-      - echo "Build phase - No build steps for static site"
+      - echo "Compiling Java HTTP Server..."
+- javac HttpFileServer.java  # Compile Java file
+  post_build:
+    commands:
+      - echo "Starting Java HTTP Server..."
+      - nohup java HttpFileServer &  # Run in the background
+ 
 artifacts:
   files:
     - '**/*'

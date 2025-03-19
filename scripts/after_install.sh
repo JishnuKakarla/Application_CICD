@@ -1,2 +1,4 @@
 #!/bin/bash
-sudo cp -r /var/www/html /var/www/html_backup
+cd /home/ec2-user/app
+javac SimpleHttpServer.java
+ 

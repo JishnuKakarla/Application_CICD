@@ -7,11 +7,11 @@ phases:
   build:
     commands:
       - echo "Compiling Java HTTP Server..."
-- javac HttpFileServer.java  # Compile Java file
+- javac SimpleHttpServer.java  # Compile Java file
   post_build:
     commands:
       - echo "Starting Java HTTP Server..."
-      - nohup java HttpFileServer &  # Run in the background
+      - nohup java SimpleHttpServer &  # Run in the background
  
 artifacts:
   files:
